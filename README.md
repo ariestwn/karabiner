@@ -1,5 +1,14 @@
 # Karabiner-Elements Configuration Generator
 
+## About This Fork
+
+This repository is a fork of [mxstbr/karabiner](https://github.com/mxstbr/karabiner) with added functionality. The main enhancement is a Python script that generates Karabiner-Elements configurations, making it easier for users to create complex keyboard modifications.
+
+Key additions:
+- Python-based configuration generator
+- Simplified setup process for complex modifications
+- Enhanced documentation and usage examples
+
 This Python script generates a custom configuration for Karabiner-Elements, a powerful keyboard customization tool for macOS. It allows you to create complex modifications, including a Hyper key setup, sublayers, and custom shortcuts.
 
 ## Features
