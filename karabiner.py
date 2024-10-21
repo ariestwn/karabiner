@@ -251,7 +251,7 @@ simple_hyper_shortcuts = {
 sublayers = {
         "spacebar": open_app("raycast://extensions/stellate/mxstbr-commands/create-notion-todo"),
         "b": {
-            "x": open_app("https://jable.tv"),
+            "x": open_app("https://x.com"),
             "t": open_app("https://www.tokopedia.com/"),
             "g": open_app("https://meet.google.com/landing?authuser=1"),
             "r": open_app("https://reddit.com"),
