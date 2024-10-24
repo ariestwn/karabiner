@@ -1,101 +1,180 @@
-# Karabiner-Elements Configuration Generator
+# Karabiner Elements Configuration Generator
 
-This Python script generates custom configurations for Karabiner-Elements, a powerful keyboard customization tool for macOS. It allows you to create complex modifications, including Hyper key setup, sublayers, and custom shortcuts.
+A Python-based configuration generator for Karabiner Elements that transforms your Caps Lock into a powerful Hyper key with multiple sublayers of functionality.
 
 ## Features
 
-- **Hyper Key**: Transform Caps Lock into a powerful Hyper key (⌃⌥⇧⌘).
-- **Sublayers**: Create multiple sublayers activated by holding Hyper + another key.
-- **Custom Shortcuts**: Define simple Hyper key shortcuts for quick actions.
-- **App Launching**: Easily set up shortcuts to open applications or URLs.
-- **Window Management**: Integration with Rectangle for window management shortcuts.
-- **Automator Integration**: Run Automator workflows or applications with custom shortcuts.
-- **Shell Command Execution**: Run shell commands directly from keyboard shortcuts.
-- **iTerm2 Integration**: Open iTerm2 and run commands efficiently.
+### 1. Hyper Key System
+- **Primary Hyper Key**: Caps Lock transforms into a powerful modifier key
+- **When pressed alone**: Acts as Escape
+- **When held**: Activates Hyper mode for accessing all sublayers
 
-## Requirements
+### 2. Sublayer System
+Each sublayer is activated by holding Hyper + the sublayer key:
 
-- Python 3.6+
-- Karabiner-Elements installed on your macOS
-- (Optional) Rectangle app for window management features
-- (Optional) iTerm2 for terminal command execution
+#### Browser Shortcuts (Hyper + B)
+- `B + X` - Open X (Twitter)
+- `B + T` - Open Tokopedia
+- `B + G` - Open Google Meet
+- `B + R` - Open Reddit
+- `B + S` - Open Shopee
 
-## Setup
+#### Application Launchers (Hyper + O)
+- `O + P` - Open Passwords
+- `O + V` - Open OpenVPN Connect
+- `O + S` - Open Slack
+- `O + C` - Open Canva
+- `O + N` - Open Obsidian
+- `O + T` - Open iTerm
+- `O + F` - Open Finder
+- `O + M` - Open Messages
+- `O + A` - Open Arc
+- `O + R` - Open Screen Studio Beta
 
-1. Clone this repository:
-   ```
-   git clone https://github.com/ariestwn/karabiner.git
-   cd karabiner
-   ```
+#### Window Management (Hyper + W)
+- `W + ;` - Hide window
+- `W + Y/O` - Move to previous/next display
+- `W + K/J` - Top/bottom half
+- `W + H/L` - Left/right half
+- `W + F` - Maximize
+- `W + R` - Restore
+- `W + C` - Center
+- `W + [/]` - Smaller/larger
+- `W + U/I` - Previous/next tab
+- `W + T` - Switch window in same app
 
-2. Ensure you have Python 3.6+ installed.
+#### Terminal Commands (Hyper + I)
+- `I + K` - Run Kitabisa download script
+- `I + F` - Run Fastfetch
 
-3. Install Karabiner-Elements if not already: [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
+#### System Commands (Hyper + S)
+- `S + D` - Run delete old media script
+- `S + L` - Lock system
+- `S + V` - Quick Look
 
-4. (Optional) Install Rectangle for window management: [Rectangle](https://rectangleapp.com/)
+#### Navigation (Hyper + V)
+- `V + H/J/K/L` - Arrow keys
+- `V + M` - Page forward
+- `V + S` - Scroll down
+- `V + D` - Duplicate
+- `V + U/I` - Page down/up
 
-5. (Optional) Install iTerm2 for better terminal integration: [iTerm2](https://iterm2.com/)
+#### Media Controls (Hyper + C)
+- `C + P` - Play/pause
+- `C + N` - Next track
+- `C + B` - Previous track
 
-## Usage
+#### Raycast Integration (Hyper + R)
+- `R + C` - Color picker
+- `R + N` - Dismiss notifications
+- `R + L` - Create short link
+- `R + E` - Emoji search
+- `R + P` - Confetti
+- `R + A` - AI chat
+- `R + S` - Silent mention
+- `R + H` - Clipboard history
+- `R + 1/2` - Connect favorite devices
 
-1. Edit the following files to customize your configuration:
-   - `config.py`: Define sublayers and simple shortcuts.
-   - `functions.py`: Contains utility functions for creating configurations.
-   - `karabiner.py`: Main script to generate the Karabiner-Elements configuration.
+### 3. Arc Browser Integration
+Special shortcuts when Arc browser is active:
+- `Hyper + N` - New incognito window
+- `Hyper + L` - Open little browser
 
-2. Run the script to generate the Karabiner-Elements configuration:
-   ```
-   python karabiner.py
-   ```
+## Prerequisites
 
-3. The script will generate a `karabiner.json` file in the same directory.
+1. [Karabiner Elements](https://karabiner-elements.pqrs.org/) installed
+2. Python 3.x installed
+3. [Rectangle](https://rectangleapp.com/) for window management features
+4. [Raycast](https://www.raycast.com/) for Raycast integration features
 
-4. Copy the generated `karabiner.json` to your Karabiner-Elements configuration directory:
-   ```
-   cp karabiner.json ~/.config/karabiner/
-   ```
+## Installation
 
-5. Restart Karabiner-Elements or reload the configuration from Karabiner-Elements preferences.
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/karabiner-config.git
+cd karabiner-config
+```
+
+2. Generate the configuration:
+```bash
+python generate.py
+```
+
+3. Copy the generated configuration:
+```bash
+cp karabiner.json ~/.config/karabiner/
+```
 
 ## Customization
 
-### Adding Sublayers
-
-Modify the `sublayers` dictionary in `config.py`. Example:
+### Modifying Sublayers
+Edit `config/settings.py` to modify existing sublayers or add new ones:
 
 ```python
-sublayers = {
-    "b": {
-        "x": open_app("https://example.com"),
-        "t": open_app("https://another-example.com"),
-    },
-    "o": {
-        "s": app("Slack"),
-        "f": app("Finder"),
-    },
-    # Add more sublayers and shortcuts as needed
+SUBLAYER_BROWSER = {
+    "x": {"to": [To(shell_command="open https://x.com")], "description": "Open X"},
+    # Add more browser shortcuts
+}
+
+SUBLAYER_APPS = {
+    "s": {"to": [To(shell_command="open -a 'Slack.app'")], "description": "Open Slack"},
+    # Add more app shortcuts
 }
 ```
-### Running Shell Commands
 
-Use the `run_shell_command` function from `functions.py` in your sublayers or simple shortcuts:
+### Adding New Sublayers
+1. Define a new sublayer in `config/settings.py`
+2. Add it to the `SUBLAYERS` dictionary
+3. Regenerate the configuration
+
+### Modifying Device Settings
+Edit the device profile in `generate.py` to match your keyboard:
 
 ```python
-"i": {
-    "k": run_shell_command("python /path/to/your/script.py", "Run custom Python script"),
-},
+def create_device_profile():
+    return {
+        "disable_built_in_keyboard_if_exists": True,
+        "identifiers": {
+            "is_keyboard": True,
+            "is_pointing_device": True,
+            "product_id": YOUR_PRODUCT_ID,
+            "vendor_id": YOUR_VENDOR_ID
+        },
+        "ignore": False,
+        "manipulate_caps_lock_led": False
+    }
+```
+
+## Project Structure
+```
+karabiner/
+├── config/
+│   ├── __init__.py
+│   ├── models.py        # Data models for Karabiner configuration
+│   ├── types.py         # Type definitions
+│   ├── actions.py       # Helper functions for actions
+│   ├── sublayers.py     # Sublayer creation logic
+│   ├── settings.py      # Sublayer configurations
+│   └── apps/
+│       ├── __init__.py
+│       └── arc.py       # Arc browser specific configurations
+└── generate.py          # Main configuration generator
 ```
 
 ## Contributing
 
-Contributions are welcome! Feel free to submit Pull Requests.
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
 
 ## License
 
-This project is open-source and available under the [MIT License](LICENSE).
+MIT License - feel free to use and modify as needed.
 
-## Acknowledgements
+## Acknowledgments
 
-- [Karabiner-Elements](https://karabiner-elements.pqrs.org/) for the amazing keyboard customization tool.
-- [Rectangle](https://rectangleapp.com/) for window management capabilities.
-- [iTerm2](https://iterm2.com/) for enhanced terminal functionality.
+- [Karabiner Elements](https://karabiner-elements.pqrs.org/)
+- [Rectangle](https://rectangleapp.com/)
+- [Raycast](https://www.raycast.com/)
