@@ -78,9 +78,12 @@ SUBLAYER_MEDIA = {
 
 # Alfred Shortcut
 SUBLAYER_ALFRED = {
-    "c": {"to": [To(key_code="a", modifiers=["right_shift", "right_option"])], "description": "Ayai Workflow Continue Chat"},
+    "spacebar": {"to": [To(key_code="a", modifiers=["right_shift", "right_option"])], "description": "Ayai Workflow Continue Chat"},
     "h": {"to": [To(key_code="a", modifiers=["right_shift", "right_command"])], "description": "Ayai Workflow History Chat"},
     "i": {"to": [To(key_code="i", modifiers=["right_shift", "right_option"])], "description": "Ayai Workflow Action Inference Chat"},
+    "c": {"to": [To(key_code="c", modifiers=["right_command", "right_option"])], "description": "Alfred Clipboard history"},
+    "s": {"to": [To(key_code="s", modifiers=["right_command", "right_option"])], "description": "Alfred Snippet"},
+
 }
 
 # Raycast commands / Uncomment to use this feature
