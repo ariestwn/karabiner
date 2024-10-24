@@ -76,18 +76,6 @@ sublayers = {
     # Add more sublayers and shortcuts as needed
 }
 ```
-
-### Adding Simple Shortcuts
-
-Modify the `simple_hyper_shortcuts` dictionary in `config.py`:
-
-```python
-simple_hyper_shortcuts = {
-    "t": {"description": "Open Things", "command": "open -a 'Things3.app'"},
-    # Add more shortcuts here
-}
-```
-
 ### Running Shell Commands
 
 Use the `run_shell_command` function from `functions.py` in your sublayers or simple shortcuts:
