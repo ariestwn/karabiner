@@ -76,10 +76,11 @@ SUBLAYER_MEDIA = {
     "b": {"to": [To(key_code="rewind")], "description": "Media: Previous"},
 }
 
+# Alfred Shortcut
 SUBLAYER_ALFRED = {
     "c": {"to": [To(key_code="a", modifiers=["right_shift", "right_option"])], "description": "Ayai Workflow Continue Chat"},
     "h": {"to": [To(key_code="a", modifiers=["right_shift", "right_command"])], "description": "Ayai Workflow History Chat"},
-    "i": {"to": [To(key_code="i", modifiers=["right_shift", "right_option"])], "description": "Ayai Workflow History Chat"},
+    "i": {"to": [To(key_code="i", modifiers=["right_shift", "right_option"])], "description": "Ayai Workflow Action Inference Chat"},
 }
 
 # Raycast commands / Uncomment to use this feature
@@ -108,8 +109,7 @@ SUBLAYERS = {
     "s": SUBLAYER_SYSTEM,
     "v": SUBLAYER_NAV,
     "c": SUBLAYER_MEDIA,
-    "a": SUBLAYER_ALFRED,
-    #"r": SUBLAYER_RAYCAST,
+    "a": SUBLAYER_ALFRED
 }
 
 # Arc browser specific bindings

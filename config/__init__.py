@@ -24,7 +24,7 @@ from .settings import (
     SUBLAYER_SYSTEM,
     SUBLAYER_NAV,
     SUBLAYER_MEDIA,
-    SUBLAYER_RAYCAST
+    SUBLAYER_ALFRED
 )
 
 __all__ = [
@@ -63,7 +63,7 @@ __all__ = [
     'SUBLAYER_SYSTEM',
     'SUBLAYER_NAV',
     'SUBLAYER_MEDIA',
-    'SUBLAYER_RAYCAST',
+    'SUBLAYER_ALFRED',
 ]
 
 __version__ = '1.0.0'
