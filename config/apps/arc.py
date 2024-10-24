@@ -1,6 +1,6 @@
 # config/apps/arc.py
-from config.models import From, To, Manipulator, KarabinerRule
 from typing import List, Tuple
+from config import From, To, Manipulator, KarabinerRule
 
 def create_arc_browser_manipulator(
     from_key: str,

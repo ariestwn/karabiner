@@ -1,22 +1,12 @@
 # generate.py
 import json
-from config.models import From, To, Manipulator, KarabinerRule
-from config.settings import SUBLAYERS, ARC_BROWSER_BINDINGS
-from config.sublayers import create_hyper_sublayers
-from config.apps.arc import create_arc_browser_rule
-
-def create_device_profile():
-    return {
-        "disable_built_in_keyboard_if_exists": True,
-        "identifiers": {
-            "is_keyboard": True,
-            "is_pointing_device": True,
-            "product_id": 544,
-            "vendor_id": 13364
-        },
-        "ignore": False,
-        "manipulate_caps_lock_led": False
-    }
+from config import (
+    From, To, Manipulator, KarabinerRule,
+    SUBLAYERS, ARC_BROWSER_BINDINGS,
+    create_hyper_sublayers,
+    create_arc_browser_rule,
+    create_device_profile
+)
 
 def main():
     # Create basic rules
