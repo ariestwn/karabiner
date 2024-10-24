@@ -122,9 +122,15 @@ SUBLAYER_APPS = {
 }
 ```
 
+### Raycast
+1. Uncomment and change from `config/settings.py`
+2. Add `SUBLAYER_RAYCAST` in `__init__.py`
+3. Regenerate the configuration
+
 ### Adding New Sublayers
 1. Define a new sublayer in `config/settings.py`
-2. Add it to the `SUBLAYERS` dictionary
+2. Add it to the `SUBLAYERS` dictionary in `config/settings.py`
+3. Add it to the `__init__.py` settings import
 3. Regenerate the configuration
 
 ### Modifying Device Settings
