@@ -109,4 +109,5 @@ SUBLAYERS = {
 ARC_BROWSER_BINDINGS = [
     ("n", "n", ["left_command", "left_shift"], "Open new incognito window in Arc"),
     ("l", "n", ["left_command", "left_option"], "Open little browser in Arc"),
+    ("equal_sign", "equal_sign", ["left_shift", "left_control"], "Open little browser in Arc"),
 ]

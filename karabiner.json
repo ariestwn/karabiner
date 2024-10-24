@@ -2478,6 +2478,35 @@
                     ]
                   }
                 ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "equal_sign"
+                },
+                "to": [
+                  {
+                    "key_code": "equal_sign",
+                    "modifiers": [
+                      "left_shift",
+                      "left_control"
+                    ]
+                  }
+                ],
+                "description": "Open little browser in Arc",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper",
+                    "value": 1
+                  },
+                  {
+                    "type": "frontmost_application_if",
+                    "bundle_identifiers": [
+                      "company.thebrowser.Browser"
+                    ]
+                  }
+                ]
               }
             ]
           }
