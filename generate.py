@@ -4,7 +4,19 @@ from config.models import From, To, Manipulator, KarabinerRule
 from config.settings import SUBLAYERS, ARC_BROWSER_BINDINGS
 from config.sublayers import create_hyper_sublayers
 from config.apps.arc import create_arc_browser_rule
-from config.device_profiles import create_device_profile
+
+def create_device_profile():
+    return {
+        "disable_built_in_keyboard_if_exists": True,
+        "identifiers": {
+            "is_keyboard": True,
+            "is_pointing_device": True,
+            "product_id": 544,
+            "vendor_id": 13364
+        },
+        "ignore": False,
+        "manipulate_caps_lock_led": False
+    }
 
 def main():
     # Create basic rules
@@ -46,10 +58,13 @@ def main():
     }
 
     # Write configuration to file
-    with open("karabiner.json", "w") as f:
-        json.dump(config, f, indent=2)
+    try:
+        with open("karabiner.json", "w") as f:
+            json.dump(config, f, indent=2)
         print("Karabiner configuration has been generated successfully!")
         print("Please copy karabiner.json to: ~/.config/karabiner/")
+    except Exception as e:
+        print(f"Error generating configuration: {e}")
 
 if __name__ == "__main__":
     main()

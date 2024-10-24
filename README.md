@@ -1,16 +1,16 @@
 # Karabiner-Elements Configuration Generator
 
-This Python script generates a custom configuration for Karabiner-Elements, a powerful keyboard customization tool for macOS. It allows you to create complex modifications, including a Hyper key setup, sublayers, and custom shortcuts.
+This Python script generates custom configurations for Karabiner-Elements, a powerful keyboard customization tool for macOS. It allows you to create complex modifications, including Hyper key setup, sublayers, and custom shortcuts.
 
 ## Features
 
-- **Hyper Key**: Transforms Caps Lock into a powerful Hyper key (⌃⌥⇧⌘).
+- **Hyper Key**: Transform Caps Lock into a powerful Hyper key (⌃⌥⇧⌘).
 - **Sublayers**: Create multiple sublayers activated by holding Hyper + another key.
 - **Custom Shortcuts**: Define simple Hyper key shortcuts for quick actions.
-- **Application Launching**: Easily set up shortcuts to open applications or URLs.
-- **Window Management**: Integrate with Rectangle for window management shortcuts.
+- **App Launching**: Easily set up shortcuts to open applications or URLs.
+- **Window Management**: Integration with Rectangle for window management shortcuts.
 - **Automator Integration**: Run Automator workflows or applications with custom shortcuts.
-- **Shell Command Execution**: Execute shell commands directly from keyboard shortcuts.
+- **Shell Command Execution**: Run shell commands directly from keyboard shortcuts.
 - **iTerm2 Integration**: Open iTerm2 and run commands efficiently.
 
 ## Requirements
@@ -28,19 +28,20 @@ This Python script generates a custom configuration for Karabiner-Elements, a po
    cd karabiner
    ```
 
-2. Make sure you have Python 3.6+ installed.
+2. Ensure you have Python 3.6+ installed.
 
-3. Install Karabiner-Elements if you haven't already: [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
+3. Install Karabiner-Elements if not already: [Karabiner-Elements](https://karabiner-elements.pqrs.org/)
 
 4. (Optional) Install Rectangle for window management: [Rectangle](https://rectangleapp.com/)
 
-5. (Optional) Install iTerm2 for enhanced terminal integration: [iTerm2](https://iterm2.com/)
+5. (Optional) Install iTerm2 for better terminal integration: [iTerm2](https://iterm2.com/)
 
 ## Usage
 
-1. Edit the `karabiner.py` script to customize your configuration:
-   - Modify the `sublayers` dictionary to define your sublayers and their actions.
-   - Adjust the `simple_hyper_shortcuts` dictionary for direct Hyper key shortcuts.
+1. Edit the following files to customize your configuration:
+   - `config.py`: Define sublayers and simple shortcuts.
+   - `functions.py`: Contains utility functions for creating configurations.
+   - `karabiner.py`: Main script to generate the Karabiner-Elements configuration.
 
 2. Run the script to generate the Karabiner-Elements configuration:
    ```
@@ -54,13 +55,13 @@ This Python script generates a custom configuration for Karabiner-Elements, a po
    cp karabiner.json ~/.config/karabiner/
    ```
 
-5. Restart Karabiner-Elements or reload the configuration from the Karabiner-Elements preferences.
+5. Restart Karabiner-Elements or reload the configuration from Karabiner-Elements preferences.
 
 ## Customization
 
 ### Adding Sublayers
 
-Modify the `sublayers` dictionary in `karabiner.py`. For example:
+Modify the `sublayers` dictionary in `config.py`. Example:
 
 ```python
 sublayers = {
@@ -78,7 +79,7 @@ sublayers = {
 
 ### Adding Simple Shortcuts
 
-Modify the `simple_hyper_shortcuts` dictionary:
+Modify the `simple_hyper_shortcuts` dictionary in `config.py`:
 
 ```python
 simple_hyper_shortcuts = {
@@ -89,7 +90,7 @@ simple_hyper_shortcuts = {
 
 ### Running Shell Commands
 
-Use the `run_shell_command` function in your sublayers or simple shortcuts:
+Use the `run_shell_command` function from `functions.py` in your sublayers or simple shortcuts:
 
 ```python
 "i": {
@@ -99,11 +100,11 @@ Use the `run_shell_command` function in your sublayers or simple shortcuts:
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Feel free to submit Pull Requests.
 
 ## License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open-source and available under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
