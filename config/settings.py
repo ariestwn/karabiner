@@ -76,19 +76,25 @@ SUBLAYER_MEDIA = {
     "b": {"to": [To(key_code="rewind")], "description": "Media: Previous"},
 }
 
-# Raycast commands
-SUBLAYER_RAYCAST = {
-    "c": {"to": [To(shell_command="open raycast://extensions/thomas/color-picker/pick-color")], "description": "Raycast: Color Picker"},
-    "n": {"to": [To(shell_command="open raycast://script-commands/dismiss-notifications")], "description": "Raycast: Dismiss Notifications"},
-    "l": {"to": [To(shell_command="open raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink")], "description": "Raycast: Create Short Link"},
-    "e": {"to": [To(shell_command="open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols")], "description": "Raycast: Emoji Search"},
-    "p": {"to": [To(shell_command="open raycast://extensions/raycast/raycast/confetti")], "description": "Raycast: Confetti"},
-    "a": {"to": [To(shell_command="open raycast://extensions/raycast/raycast-ai/ai-chat")], "description": "Raycast: AI Chat"},
-    "s": {"to": [To(shell_command="open raycast://extensions/peduarte/silent-mention/index")], "description": "Raycast: Silent Mention"},
-    "h": {"to": [To(shell_command="open raycast://extensions/raycast/clipboard-history/clipboard-history")], "description": "Raycast: Clipboard History"},
-    "1": {"to": [To(shell_command="open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1")], "description": "Raycast: Connect Device 1"},
-    "2": {"to": [To(shell_command="open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2")], "description": "Raycast: Connect Device 2"},
+SUBLAYER_ALFRED = {
+    "c": {"to": [To(key_code="a", modifiers=["right_shift", "right_option"])], "description": "Ayai Workflow Continue Chat"},
+    "h": {"to": [To(key_code="a", modifiers=["right_shift", "right_command"])], "description": "Ayai Workflow History Chat"},
+    "i": {"to": [To(key_code="i", modifiers=["right_shift", "right_option"])], "description": "Ayai Workflow History Chat"},
 }
+
+# Raycast commands / Uncomment to use this feature
+# SUBLAYER_RAYCAST = {
+#     "c": {"to": [To(shell_command="open raycast://extensions/thomas/color-picker/pick-color")], "description": "Raycast: Color Picker"},
+#     "n": {"to": [To(shell_command="open raycast://script-commands/dismiss-notifications")], "description": "Raycast: Dismiss Notifications"},
+#     "l": {"to": [To(shell_command="open raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink")], "description": "Raycast: Create Short Link"},
+#     "e": {"to": [To(shell_command="open raycast://extensions/raycast/emoji-symbols/search-emoji-symbols")], "description": "Raycast: Emoji Search"},
+#     "p": {"to": [To(shell_command="open raycast://extensions/raycast/raycast/confetti")], "description": "Raycast: Confetti"},
+#     "a": {"to": [To(shell_command="open raycast://extensions/raycast/raycast-ai/ai-chat")], "description": "Raycast: AI Chat"},
+#     "s": {"to": [To(shell_command="open raycast://extensions/peduarte/silent-mention/index")], "description": "Raycast: Silent Mention"},
+#     "h": {"to": [To(shell_command="open raycast://extensions/raycast/clipboard-history/clipboard-history")], "description": "Raycast: Clipboard History"},
+#     "1": {"to": [To(shell_command="open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1")], "description": "Raycast: Connect Device 1"},
+#     "2": {"to": [To(shell_command="open raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2")], "description": "Raycast: Connect Device 2"},
+# }
 
 # Main sublayers configuration
 SUBLAYERS = {
@@ -102,7 +108,8 @@ SUBLAYERS = {
     "s": SUBLAYER_SYSTEM,
     "v": SUBLAYER_NAV,
     "c": SUBLAYER_MEDIA,
-    "r": SUBLAYER_RAYCAST,
+    "a": SUBLAYER_ALFRED,
+    #"r": SUBLAYER_RAYCAST,
 }
 
 # Arc browser specific bindings
