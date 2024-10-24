@@ -1,6 +1,5 @@
 # config/settings.py
-from .models import To
-from .actions import run_automator, run_shell_command, rectangle, open_app, app, canva_action
+from config import To, open_app, app, rectangle, run_shell_command, run_automator, canva_action
 
 # Browser-related URLs and apps
 SUBLAYER_BROWSER = {

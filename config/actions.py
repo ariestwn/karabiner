@@ -1,6 +1,6 @@
 # config/actions.py
 from typing import Dict, List
-from .models import To
+from config import To
 
 def open_app(*what: str) -> Dict:
     return {

@@ -1,7 +1,6 @@
 # config/sublayers.py
 from typing import Dict, List, Union
-from .models import From, To, Manipulator, KarabinerRule
-from .types import KeyCode
+from config import From, To, Manipulator, KarabinerRule, KeyCode
 
 def generate_sublayer_variable_name(key: KeyCode) -> str:
     return f"hyper_sublayer_{key}"
