@@ -1,5 +1,5 @@
 # config/apps/arc.py
-from ..models import From, To, Manipulator, KarabinerRule
+from config.models import From, To, Manipulator, KarabinerRule
 from typing import List, Tuple
 
 def create_arc_browser_manipulator(
