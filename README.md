@@ -113,8 +113,8 @@ Special shortcuts when Arc browser is active:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/karabiner-config.git
-cd karabiner-config
+git clone https://github.com/ariestwn/karabiner.git
+cd karabiner
 ```
 
 2. Generate the configuration:
