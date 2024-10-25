@@ -10,7 +10,13 @@ A Python-based configuration generator for Karabiner Elements that transforms yo
 - **When held**: Activates Hyper mode for accessing all sublayers
 
 ### 2. Sublayer System
-Each sublayer is activated by holding Hyper + the sublayer key:
+
+#### Quick Access (Hyper + Key)
+Direct commands without entering a sublayer:
+- `Spacebar` - Open/Close Alfred
+- `Period` - Open/Close Alfred
+- `T` - Open Things3
+- `K` - Open Authy
 
 #### Browser Shortcuts (Hyper + B)
 - `B + X` - Open X (Twitter)
@@ -49,49 +55,65 @@ Each sublayer is activated by holding Hyper + the sublayer key:
 
 #### System Commands (Hyper + S)
 - `S + D` - Run delete old media script
+- `S + .` - Start Screen Saver
 - `S + L` - Lock system
 - `S + V` - Quick Look
 
 #### Navigation (Hyper + V)
 - `V + H/J/K/L` - Arrow keys
-- `V + M` - Page forward
-- `V + S` - Scroll down
-- `V + D` - Duplicate
-- `V + U/I` - Page down/up
+- `V + U/I` - Page Down/Up
 
 #### Media Controls (Hyper + C)
 - `C + P` - Play/pause
 - `C + N` - Next track
 - `C + B` - Previous track
 
-#### Raycast Integration (Hyper + R)
-- `R + C` - Color picker
-- `R + N` - Dismiss notifications
-- `R + L` - Create short link
-- `R + E` - Emoji search
-- `R + P` - Confetti
-- `R + A` - AI chat
-- `R + S` - Silent mention
-- `R + H` - Clipboard history
-- `R + 1/2` - Connect favorite devices
+#### Alfred Workflow (Hyper + A)
+- `A + Space` - Continue Chat
+- `A + H` - History Chat
+- `A + I` - Action Inference Chat
+- `A + C` - Clipboard History
+- `A + S` - Snippets
+
+#### Canva Integration (Hyper + X)
+- New Content:
+  - `X + N` - New design
+  - `X + P` - New presentation
+  - `X + I` - New Instagram post
+  - `X + S` - New story
+  - `X + F` - New Facebook post
+  - `X + V` - New video
+- Resources:
+  - `X + T` - Templates
+  - `X + H` - Photos
+  - `X + E` - Elements
+  - `X + O` - Fonts
+- Management:
+  - `X + M` - Projects
+  - `X + B` - Brand kit
+  - `X + D` - Designs
+  - `X + L` - Logos
 
 ### 3. Arc Browser Integration
 Special shortcuts when Arc browser is active:
 - `Hyper + N` - New incognito window
 - `Hyper + L` - Open little browser
+- `Hyper + =` - Toggle split view
 
 ## Prerequisites
 
 1. [Karabiner Elements](https://karabiner-elements.pqrs.org/) installed
 2. Python 3.x installed
-3. [Rectangle](https://rectangleapp.com/) for window management features
-4. [Raycast](https://www.raycast.com/) for Raycast integration features
+3. [Rectangle](https://rectangleapp.com/) for window management
+4. [iTerm2](https://iterm2.com/) for terminal commands
+5. [Alfred](https://www.alfredapp.com/) for Alfred workflows
+6. [Arc Browser](https://arc.net/) for Arc-specific features
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/ariestwn/karabiner-config.git
+git clone https://github.com/yourusername/karabiner-config.git
 cd karabiner-config
 ```
 
@@ -105,6 +127,21 @@ python generate.py
 cp karabiner.json ~/.config/karabiner/
 ```
 
+## Project Structure
+```
+karabiner/
+├── config/
+│   ├── __init__.py      # Package initialization and exports
+│   ├── models.py        # Data models for Karabiner configuration
+│   ├── types.py         # Type definitions
+│   ├── actions.py       # Action helper functions
+│   ├── sublayers.py     # Sublayer creation logic
+│   ├── settings.py      # Sublayer configurations
+│   └── apps/
+│       └── arc.py       # Arc browser specific configurations
+└── generate.py          # Main configuration generator
+```
+
 ## Customization
 
 ### Modifying Sublayers
@@ -112,59 +149,39 @@ Edit `config/settings.py` to modify existing sublayers or add new ones:
 
 ```python
 SUBLAYER_BROWSER = {
-    "x": {"to": [To(shell_command="open https://x.com")], "description": "Open X"},
+    "x": open_app("https://x.com"),
     # Add more browser shortcuts
 }
 
 SUBLAYER_APPS = {
-    "s": {"to": [To(shell_command="open -a 'Slack.app'")], "description": "Open Slack"},
+    "s": app("Slack"),
     # Add more app shortcuts
 }
 ```
 
-### Raycast
-1. Uncomment and change from `config/settings.py`
-2. Add `SUBLAYER_RAYCAST` in `__init__.py`
-3. Regenerate the configuration
-
-### Adding New Sublayers
-1. Define a new sublayer in `config/settings.py`
-2. Add it to the `SUBLAYERS` dictionary in `config/settings.py`
-3. Add it to the `__init__.py` settings import
-3. Regenerate the configuration
-
-### Modifying Device Settings
-Edit the device profile in `generate.py` to match your keyboard:
+### Adding New Actions
+Add new action helpers in `config/actions.py`:
 
 ```python
-def create_device_profile():
+def my_custom_action(param: str) -> Dict:
     return {
-        "disable_built_in_keyboard_if_exists": True,
-        "identifiers": {
-            "is_keyboard": True,
-            "is_pointing_device": True,
-            "product_id": YOUR_PRODUCT_ID,
-            "vendor_id": YOUR_VENDOR_ID
-        },
-        "ignore": False,
-        "manipulate_caps_lock_led": False
+        "to": [To(shell_command=f"my_command {param}")],
+        "description": f"My custom action: {param}"
     }
 ```
 
-## Project Structure
-```
-karabiner/
-├── config/
-│   ├── __init__.py
-│   ├── models.py        # Data models for Karabiner configuration
-│   ├── types.py         # Type definitions
-│   ├── actions.py       # Helper functions for actions
-│   ├── sublayers.py     # Sublayer creation logic
-│   ├── settings.py      # Sublayer configurations
-│   └── apps/
-│       ├── __init__.py
-│       └── arc.py       # Arc browser specific configurations
-└── generate.py          # Main configuration generator
+### Modifying Device Settings
+Edit device profiles in `config/device_profiles.py`:
+
+```python
+def create_device_profile() -> Dict[str, Any]:
+    return {
+        "disable_built_in_keyboard_if_exists": True,
+        "identifiers": {
+            "product_id": YOUR_PRODUCT_ID,
+            "vendor_id": YOUR_VENDOR_ID
+        }
+    }
 ```
 
 ## Contributing
@@ -178,9 +195,3 @@ karabiner/
 ## License
 
 MIT License - feel free to use and modify as needed.
-
-## Acknowledgments
-
-- [Karabiner Elements](https://karabiner-elements.pqrs.org/)
-- [Rectangle](https://rectangleapp.com/)
-- [Raycast](https://www.raycast.com/)

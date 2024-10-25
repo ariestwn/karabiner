@@ -92,28 +92,10 @@ SUBLAYER_QUICK = {
 }
 
 SUBLAYER_CANVA = {
-    # New content
-    "n": canva_action("new_design"),
-    "p": canva_action("new_presentation"),
-    "i": canva_action("new_instagram"),
-    "s": canva_action("new_story"),
-    "f": canva_action("new_facebook"),
-    "v": canva_action("new_video"),
-    
-    # Resources
-    "t": canva_action("templates"),
-    "h": canva_action("photos"),
-    "e": canva_action("elements"),
-    "o": canva_action("fonts"),
-    
-    # Management
-    "m": canva_action("projects"),
-    "b": canva_action("brand_kit"),
-    "d": canva_action("designs"),
-    "l": canva_action("logos"),
+    "c": open_app("raycast://extensions/thomas/color-picker/pick-color"),
 }
 
-# Raycast commands (commented out)
+# Preserved Raycast commands (commented out)
 # SUBLAYER_RAYCAST = {
 #     "c": open_app("raycast://extensions/thomas/color-picker/pick-color"),
 #     "n": open_app("raycast://script-commands/dismiss-notifications"),
