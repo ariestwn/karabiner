@@ -43,6 +43,7 @@ from .settings import (
     SUBLAYER_ALFRED,
     SUBLAYER_QUICK,
     SUBLAYER_CANVA,
+    SUBLAYER_SHOTTR,
 )
 
 __version__ = '1.0.0'
@@ -91,4 +92,5 @@ __all__ = [
     'SUBLAYER_ALFRED',
     'SUBLAYER_QUICK',
     'SUBLAYER_CANVA',
+    'SUBLAYER_SHOTTR',
 ]

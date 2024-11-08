@@ -15,18 +15,19 @@ SUBLAYER_APPS = {
     "p": app("Passwords"),
     "v": app("OpenVPN Connect"),
     "s": app("Slack"),
-    "c": app("Canva"),
+    "d": app("Canva"),
+    "c": app("cursor"),
     "n": app("Obsidian"),
     "t": app("iTerm"),
     "f": app("Finder"),
     "m": app("Messages"),
+    "w": app("WhatsApp"),
     "a": app("Arc"),
     "r": app("Screen Studio Beta"),
 }
 
 # Window management
 SUBLAYER_WINDOW = {
-    "semicolon": {"to": [To(key_code="h", modifiers=["right_command"])], "description": "Window: Hide"},
     "y": rectangle("previous-display"),
     "o": rectangle("next-display"),
     "k": rectangle("top-half"),
@@ -45,7 +46,7 @@ SUBLAYER_WINDOW = {
 
 # Shell commands and scripts
 SUBLAYER_TERMINAL = {
-    "k": run_shell_command("python /Users/ariestwn/Downloads/Kitabisa/download.py", "Run Kitabisa download script"),
+    "k": run_shell_command("python /Users/ariestwn/Downloads/Kitabisa/download.py", "Run download script"),
     "f": run_shell_command("fastfetch", "Run Fastfetch"),
 }
 
@@ -76,42 +77,39 @@ SUBLAYER_MEDIA = {
 
 # Alfred Shortcut
 SUBLAYER_ALFRED = {
-    "spacebar": {"to": [To(key_code="a", modifiers=["right_shift", "right_option"])], "description": "Ayai Workflow Continue Chat"},
-    "h": {"to": [To(key_code="a", modifiers=["right_shift", "right_command"])], "description": "Ayai Workflow History Chat"},
-    "i": {"to": [To(key_code="i", modifiers=["right_shift", "right_option"])], "description": "Ayai Workflow Action Inference Chat"},
-    "c": {"to": [To(key_code="c", modifiers=["right_command", "right_option"])], "description": "Alfred Clipboard history"},
+    "h": open_app("alfred://runtrigger/com.zeitlings.gpt.nexus/chat.view.archive/"), #archive ayai
+    "i": {"to": [To(key_code="i", modifiers=["right_command", "right_option"])], "description": "Inference Action Ayai"},
+    "p": open_app("alfred://runtrigger/com.zeitlings.colorpicker/cPicker/"), #colorPicker trigger
     "s": {"to": [To(key_code="s", modifiers=["right_command", "right_option"])], "description": "Alfred Snippet"},
+    "c": {"to": [To(key_code="c", modifiers=["right_command", "right_option"])], "description": "Alfred Clipboard History"},
 }
 
 # Quick Access (directly with Hyper key, no sublayer needed)
 SUBLAYER_QUICK = {
     "spacebar": {"to": [To(key_code="f4", modifiers=["right_command"])], "description": "Open/Close Alfred"},
-    "period": {"to": [To(key_code="period", modifiers=["left_shift", "left_command"])], "description": "Open/Close Alfred"},
+    "period": {"to": [To(key_code="period", modifiers=["left_shift", "left_command"])], "description": "Show/Hide Hidden File Finder"},
     "t": app("Things3"),
     "k": app("Authy"),
+    "m": app("Mail"),  
 }
 
 SUBLAYER_CANVA = {
     "c": open_app("raycast://extensions/thomas/color-picker/pick-color"),
 }
 
-# Preserved Raycast commands (commented out)
-# SUBLAYER_RAYCAST = {
-#     "c": open_app("raycast://extensions/thomas/color-picker/pick-color"),
-#     "n": open_app("raycast://script-commands/dismiss-notifications"),
-#     "l": open_app("raycast://extensions/stellate/mxstbr-commands/create-mxs-is-shortlink"),
-#     "e": open_app("raycast://extensions/raycast/emoji-symbols/search-emoji-symbols"),
-#     "p": open_app("raycast://extensions/raycast/raycast/confetti"),
-#     "a": open_app("raycast://extensions/raycast/raycast-ai/ai-chat"),
-#     "s": open_app("raycast://extensions/peduarte/silent-mention/index"),
-#     "h": open_app("raycast://extensions/raycast/clipboard-history/clipboard-history"),
-#     "1": open_app("raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-1"),
-#     "2": open_app("raycast://extensions/VladCuciureanu/toothpick/connect-favorite-device-2"),
-# }
+# Preserved Shottr commands (commented out)
+SUBLAYER_SHOTTR = {
+    "1": {"to": [To(key_code="0", modifiers=["right_shift", "right_command"])], "description": "OCR Screenshot Alfred Shortcuts"},
+    "2": open_app("shottr://grab/area"), #select area then copy to clip
+    "3": open_app("shottr://grab/window"), #select window then copy to clip
+    "4": open_app("shottr://grab/fullscreen?then=save"), #select scroll then copy to clip
+    "c": open_app("shottr://load/clipboard"), #select window then copy to clip
+}
 
 # Main sublayers configuration
 SUBLAYERS = {
     **SUBLAYER_QUICK,
+    "tab": SUBLAYER_SHOTTR,
     "x": SUBLAYER_CANVA,
     "b": SUBLAYER_BROWSER,
     "o": SUBLAYER_APPS,
