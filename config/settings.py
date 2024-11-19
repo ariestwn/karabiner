@@ -97,7 +97,7 @@ SUBLAYER_CANVA = {
     "c": open_app("raycast://extensions/thomas/color-picker/pick-color"),
 }
 
-# Preserved Shottr commands (commented out)
+# Preserved Shottr commands (commented out) 
 SUBLAYER_SHOTTR = {
     "1": {"to": [To(key_code="0", modifiers=["right_shift", "right_command"])], "description": "OCR Screenshot Alfred Shortcuts"},
     "2": open_app("shottr://grab/area"), #select area then copy to clip
