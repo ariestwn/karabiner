@@ -1386,10 +1386,10 @@
                 },
                 "to": [
                   {
-                    "shell_command": "open -a 'cursor.app'"
+                    "shell_command": "open -a 'Visual Studio Code.app'"
                   }
                 ],
-                "description": "Open -a 'cursor.app'",
+                "description": "Open -a 'Visual Studio Code.app'",
                 "conditions": [
                   {
                     "type": "variable_if",
@@ -1558,6 +1558,30 @@
                   }
                 ],
                 "description": "Open -a 'Screen Studio Beta.app'",
+                "conditions": [
+                  {
+                    "type": "variable_if",
+                    "name": "hyper_sublayer_o",
+                    "value": 1
+                  }
+                ]
+              },
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "b",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'Safari.app'"
+                  }
+                ],
+                "description": "Open -a 'Safari.app'",
                 "conditions": [
                   {
                     "type": "variable_if",

@@ -13,7 +13,6 @@ from .actions import (
     rectangle,
     run_shell_command,
     run_automator,
-    canva_action,
 )
 
 # Sublayer functions
@@ -42,7 +41,6 @@ from .settings import (
     SUBLAYER_MEDIA,
     SUBLAYER_ALFRED,
     SUBLAYER_QUICK,
-    SUBLAYER_CANVA,
     SUBLAYER_SHOTTR,
 )
 
@@ -91,6 +89,5 @@ __all__ = [
     'SUBLAYER_MEDIA',
     'SUBLAYER_ALFRED',
     'SUBLAYER_QUICK',
-    'SUBLAYER_CANVA',
     'SUBLAYER_SHOTTR',
 ]

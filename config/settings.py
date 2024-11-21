@@ -1,5 +1,5 @@
 # config/settings.py
-from config import To, open_app, app, rectangle, run_shell_command, run_automator, canva_action
+from config import To, open_app, app, rectangle, run_shell_command, run_automator
 
 # Browser-related URLs and apps
 SUBLAYER_BROWSER = {
@@ -16,7 +16,7 @@ SUBLAYER_APPS = {
     "v": app("OpenVPN Connect"),
     "s": app("Slack"),
     "d": app("Canva"),
-    "c": app("cursor"),
+    "c": app("Visual Studio Code"),
     "n": app("Obsidian"),
     "t": app("iTerm"),
     "f": app("Finder"),
@@ -24,6 +24,7 @@ SUBLAYER_APPS = {
     "w": app("WhatsApp"),
     "a": app("Arc"),
     "r": app("Screen Studio Beta"),
+    "b": app("Safari"),
 }
 
 # Window management
@@ -93,10 +94,6 @@ SUBLAYER_QUICK = {
     "m": app("Mail"),  
 }
 
-SUBLAYER_CANVA = {
-    "c": open_app("raycast://extensions/thomas/color-picker/pick-color"),
-}
-
 # Preserved Shottr commands (commented out) 
 SUBLAYER_SHOTTR = {
     "1": {"to": [To(key_code="0", modifiers=["right_shift", "right_command"])], "description": "OCR Screenshot Alfred Shortcuts"},
@@ -110,7 +107,6 @@ SUBLAYER_SHOTTR = {
 SUBLAYERS = {
     **SUBLAYER_QUICK,
     "tab": SUBLAYER_SHOTTR,
-    "x": SUBLAYER_CANVA,
     "b": SUBLAYER_BROWSER,
     "o": SUBLAYER_APPS,
     "w": SUBLAYER_WINDOW,
