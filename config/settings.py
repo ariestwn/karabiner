@@ -84,11 +84,10 @@ SUBLAYER_MEDIA = {
 SUBLAYER_ALFRED = {
     "h": open_app("raycast-x://extensions/raycast/ai/ai-chat"), #archive ayai
     "i": open_app("raycast-x://extensions/ariestwn/quickai/improve-writing"),
-    "p": open_app("raycast-x://extensions/raycast/system/open-camera"), #colorPicker trigger
+    "p": open_app("raycast-x://extensions/raycast/raycast/open-camera"), #colorPicker trigger
     "c": open_app("raycast-x://extensions/raycast/clipboard-history/clipboard-history"), #supercmd clipboard history
     "s": open_app("raycast-x://extensions/raycast/snippets/search-snippets"), #supercmd search snippet
-    #"s": {"to": [To(key_code="picks", modifiers=["right_command", "right_option"])], "description": "Alfred Snippet"},
-    #"c": {"to": [To(key_code="c", modifiers=["right_command", "right_option"])], "description": "Alfred Clipboard History"},
+    "e": open_app("raycast-x://extensions/raycast/emoji-symbols/search-emoji-symbols"), #supercmd search snippet
 }
 
 # Quick Access (directly with Hyper key, no sublayer needed)
