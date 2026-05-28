@@ -1,5 +1,5 @@
 # config/settings.py
-from config import To, open_app, app, rectangle, run_shell_command, run_automator
+from config import To, open_app, app, rectangle, rcustomw, supercmdwindow, run_shell_command, run_automator
 
 # Browser-related URLs and apps
 SUBLAYER_BROWSER = {
@@ -18,31 +18,35 @@ SUBLAYER_APPS = {
     "d": app("Canva"),
     "c": app("Visual Studio Code"),
     "n": app("Obsidian"),
-    "t": app("iTerm"),
+    "t": app("Ghostty"),
     "f": app("Finder"),
     "m": app("Messages"),
     "w": app("WhatsApp"),
-    "a": app("Arc"),
-    "r": app("Screen Studio Beta"),
-    "b": app("Safari"),
+    "r": app("Screen Studio"),
+    "b": app("Bruno"),
 }
 
 # Window management
 SUBLAYER_WINDOW = {
-    "y": rectangle("previous-display"),
-    "o": rectangle("next-display"),
-    "k": rectangle("top-half"),
-    "j": rectangle("bottom-half"),
-    "h": rectangle("left-half"),
-    "l": rectangle("right-half"),
-    "f": rectangle("maximize"),
-    "r": rectangle("restore"),
-    "c": rectangle("center"),
-    "open_bracket": rectangle("smaller"),
-    "close_bracket": rectangle("larger"),
-    "u": {"to": [To(key_code="tab", modifiers=["right_control", "right_shift"])], "description": "Window: Previous Tab"},
-    "i": {"to": [To(key_code="tab", modifiers=["right_control"])], "description": "Window: Next Tab"},
-    "t": {"to": [To(key_code="grave_accent_and_tilde", modifiers=["right_command"])], "description": "Window: Switch window in same app"},
+    "1": rcustomw("work-v1"),
+    "2": rcustomw("work-v2"),
+    "3": rcustomw("work-v3"),
+    "c": supercmdwindow("center"),
+    "r": supercmdwindow("restore"),
+    "f": supercmdwindow("maximize"),
+    "h": supercmdwindow("left-half"),
+    "l": supercmdwindow("right-half"),
+    "j": supercmdwindow("top-half"),
+    "k": supercmdwindow("bottom-half"),
+    "open_bracket": supercmdwindow("make-smaller"),
+    "close_bracket": supercmdwindow("make-larger"),
+    "right_arrow": supercmdwindow("next-desktop"),
+    "left_arrow": supercmdwindow("previous-desktop"),
+    "up_arrow": supercmdwindow("next-display"),
+    "down_arrow": supercmdwindow("previous-display"),
+    # "u": {"to": [To(key_code="tab", modifiers=["right_control", "right_shift"])], "description": "Window: Previous Tab"},
+    # "i": {"to": [To(key_code="tab", modifiers=["right_control"])], "description": "Window: Next Tab"},
+    # "t": {"to": [To(key_code="grave_accent_and_tilde", modifiers=["right_command"])], "description": "Window: Switch window in same app"},
 }
 
 # Shell commands and scripts
@@ -78,20 +82,19 @@ SUBLAYER_MEDIA = {
 
 # Alfred Shortcut
 SUBLAYER_ALFRED = {
-    "h": open_app("alfred://runtrigger/com.zeitlings.gpt.nexus/chat.view.archive/"), #archive ayai
-    "i": {"to": [To(key_code="i", modifiers=["right_command", "right_option"])], "description": "Inference Action Ayai"},
-    "p": open_app("alfred://runtrigger/com.zeitlings.colorpicker/cPicker/"), #colorPicker trigger
-    "s": {"to": [To(key_code="s", modifiers=["right_command", "right_option"])], "description": "Alfred Snippet"},
-    "c": {"to": [To(key_code="c", modifiers=["right_command", "right_option"])], "description": "Alfred Clipboard History"},
+    "h": open_app("raycast-x://extensions/raycast/ai/ai-chat"), #archive ayai
+    "i": open_app("raycast-x://extensions/ariestwn/quickai/improve-writing"),
+    "p": open_app("raycast-x://extensions/raycast/system/open-camera"), #colorPicker trigger
+    "c": open_app("raycast-x://extensions/raycast/clipboard-history/clipboard-history"), #supercmd clipboard history
+    "s": open_app("raycast-x://extensions/raycast/snippets/search-snippets"), #supercmd search snippet
+    #"s": {"to": [To(key_code="picks", modifiers=["right_command", "right_option"])], "description": "Alfred Snippet"},
+    #"c": {"to": [To(key_code="c", modifiers=["right_command", "right_option"])], "description": "Alfred Clipboard History"},
 }
 
 # Quick Access (directly with Hyper key, no sublayer needed)
 SUBLAYER_QUICK = {
     "spacebar": {"to": [To(key_code="f4", modifiers=["right_command"])], "description": "Open/Close Alfred"},
     "period": {"to": [To(key_code="period", modifiers=["left_shift", "left_command"])], "description": "Show/Hide Hidden File Finder"},
-    "t": app("Things3"),
-    "k": app("Authy"),
-    "m": app("Mail"),  
 }
 
 # Preserved Shottr commands (commented out) 

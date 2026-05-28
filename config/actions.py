@@ -4,7 +4,7 @@ from config import To
 
 def open_app(*what: str) -> Dict:
     return {
-        "to": [To(shell_command=f"open {w}") for w in what],
+        "to": [To(shell_command=f"open -g {w}") for w in what],
         "description": f"Open {' & '.join(what)}"
     }
 
@@ -55,6 +55,18 @@ def run_shell_command(command: str, description: str) -> Dict:
 def rectangle(name: str) -> Dict:
     return {
         "to": [To(shell_command=f"open -g rectangle://execute-action?name={name}")],
+        "description": f"Window: {name}"
+    }
+
+def supercmdwindow(name: str) -> Dict:
+    return {
+        "to": [To(shell_command=f"open -g raycast-x://extensions/raycast/window-management/{name}")],
+        "description": f"Window: {name}"
+    }
+
+def rcustomw(name: str) -> Dict:
+    return {
+        "to": [To(shell_command=f"open -g 'raycast-x://customWindowManagementCommand?&name={name}'")],
         "description": f"Window: {name}"
     }
 

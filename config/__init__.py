@@ -11,6 +11,8 @@ from .actions import (
     open_app,
     app,
     rectangle,
+    rcustomw,
+    supercmdwindow,
     run_shell_command,
     run_automator,
 )
@@ -61,6 +63,8 @@ __all__ = [
     'open_app',
     'app',
     'rectangle',
+    'supercmdwindow',
+    'rcustomw',
     'run_shell_command',
     'run_automator',
     'canva_action',
