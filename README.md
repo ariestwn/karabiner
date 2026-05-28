@@ -94,11 +94,14 @@ Direct commands without entering a sublayer:
   - `X + D` - Designs
   - `X + L` - Logos
 
-### 3. Arc Browser Integration
-Special shortcuts when Arc browser is active:
-- `Hyper + N` - New incognito window
-- `Hyper + L` - Open little browser
-- `Hyper + =` - Toggle split view
+### 3. Zen Browser Integration
+Special shortcuts when Zen browser is active:
+- `Hyper + N` - Open new private window (⌘⇧P)
+- `Hyper + →` - Next workspace (⌘⌥⌃→)
+- `Hyper + ←` - Previous workspace (⌘⌥⌃←)
+- `Hyper + 1` - Switch to workspace 1 (⌘⌥⌃1)
+- `Hyper + 2` - Switch to workspace 2 (⌘⌥⌃2)
+- `Hyper + 3` - Switch to workspace 3 (⌘⌥⌃3)
 
 ## Prerequisites
 
@@ -107,7 +110,7 @@ Special shortcuts when Arc browser is active:
 3. [Rectangle](https://rectangleapp.com/) for window management
 4. [iTerm2](https://iterm2.com/) for terminal commands
 5. [Alfred](https://www.alfredapp.com/) for Alfred workflows
-6. [Arc Browser](https://arc.net/) for Arc-specific features
+6. [Zen Browser](https://zen-browser.app/) for Zen-specific features
 
 ## Installation
 
@@ -138,7 +141,7 @@ karabiner/
 │   ├── sublayers.py     # Sublayer creation logic
 │   ├── settings.py      # Sublayer configurations
 │   └── apps/
-│       └── arc.py       # Arc browser specific configurations
+│       └── zen.py       # Zen browser specific configurations
 └── generate.py          # Main configuration generator
 ```
 
