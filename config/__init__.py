@@ -12,7 +12,7 @@ from .actions import (
     app,
     rectangle,
     rcustomw,
-    supercmdwindow,
+    raycastw,
     run_shell_command,
     run_automator,
 )
@@ -63,7 +63,7 @@ __all__ = [
     'open_app',
     'app',
     'rectangle',
-    'supercmdwindow',
+    'raycastw',
     'rcustomw',
     'run_shell_command',
     'run_automator',

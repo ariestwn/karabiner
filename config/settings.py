@@ -1,5 +1,5 @@
 # config/settings.py
-from config import To, open_app, app, rectangle, rcustomw, supercmdwindow, run_shell_command, run_automator
+from config import To, open_app, app, rectangle, rcustomw, raycastw, run_shell_command, run_automator
 
 # Browser-related URLs and apps
 SUBLAYER_BROWSER = {
@@ -31,19 +31,19 @@ SUBLAYER_WINDOW = {
     "1": rcustomw("work-v1"),
     "2": rcustomw("work-v2"),
     "3": rcustomw("work-v3"),
-    "c": supercmdwindow("center"),
-    "r": supercmdwindow("restore"),
-    "f": supercmdwindow("maximize"),
-    "h": supercmdwindow("left-half"),
-    "l": supercmdwindow("right-half"),
-    "j": supercmdwindow("top-half"),
-    "k": supercmdwindow("bottom-half"),
-    "open_bracket": supercmdwindow("make-smaller"),
-    "close_bracket": supercmdwindow("make-larger"),
-    "right_arrow": supercmdwindow("next-desktop"),
-    "left_arrow": supercmdwindow("previous-desktop"),
-    "up_arrow": supercmdwindow("next-display"),
-    "down_arrow": supercmdwindow("previous-display"),
+    "c": raycastw("center"),
+    "r": raycastw("restore"),
+    "f": raycastw("maximize"),
+    "h": raycastw("left-half"),
+    "l": raycastw("right-half"),
+    "j": raycastw("top-half"),
+    "k": raycastw("bottom-half"),
+    "open_bracket": raycastw("make-smaller"),
+    "close_bracket": raycastw("make-larger"),
+    "right_arrow": raycastw("next-desktop"),
+    "left_arrow": raycastw("previous-desktop"),
+    "up_arrow": raycastw("next-display"),
+    "down_arrow": raycastw("previous-display"),
     # "u": {"to": [To(key_code="tab", modifiers=["right_control", "right_shift"])], "description": "Window: Previous Tab"},
     # "i": {"to": [To(key_code="tab", modifiers=["right_control"])], "description": "Window: Next Tab"},
     # "t": {"to": [To(key_code="grave_accent_and_tilde", modifiers=["right_command"])], "description": "Window: Switch window in same app"},

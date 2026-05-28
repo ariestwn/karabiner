@@ -58,7 +58,7 @@ def rectangle(name: str) -> Dict:
         "description": f"Window: {name}"
     }
 
-def supercmdwindow(name: str) -> Dict:
+def raycastw(name: str) -> Dict:
     return {
         "to": [To(shell_command=f"open -g raycast-x://extensions/raycast/window-management/{name}")],
         "description": f"Window: {name}"
