@@ -1,8 +1,8 @@
-# config/apps/arc.py
+# config/apps/zen.py
 from typing import List, Tuple
 from config import From, To, Manipulator, KarabinerRule
 
-def create_arc_browser_manipulator(
+def create_zen_browser_manipulator(
     from_key: str,
     to_key: str,
     to_modifiers: List[str],
@@ -16,17 +16,17 @@ def create_arc_browser_manipulator(
             {"type": "variable_if", "name": "hyper", "value": 1},
             {
                 "type": "frontmost_application_if",
-                "bundle_identifiers": ["company.thebrowser.Browser"]
+                "bundle_identifiers": ["app.zen-browser.zen"]
             }
         ],
         description=description
     )
 
-def create_arc_browser_rule(bindings: List[Tuple[str, str, List[str], str]]) -> KarabinerRule:
+def create_zen_browser_rule(bindings: List[Tuple[str, str, List[str], str]]) -> KarabinerRule:
     return KarabinerRule(
-        description="Hyper key bindings untuk Arc browser",
+        description="Hyper key bindings untuk Zen browser",
         manipulators=[
-            create_arc_browser_manipulator(from_key, to_key, to_modifiers, description)
+            create_zen_browser_manipulator(from_key, to_key, to_modifiers, description)
             for from_key, to_key, to_modifiers, description in bindings
         ]
     )

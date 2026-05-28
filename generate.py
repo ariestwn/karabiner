@@ -2,9 +2,9 @@
 import json
 from config import (
     From, To, Manipulator, KarabinerRule,
-    SUBLAYERS, ARC_BROWSER_BINDINGS,
+    SUBLAYERS, ZEN_BROWSER_BINDINGS,
     create_hyper_sublayers,
-    create_arc_browser_rule,
+    create_zen_browser_rule,
     create_device_profile
 )
 
@@ -25,7 +25,7 @@ def main():
             ]
         ),
         *create_hyper_sublayers(SUBLAYERS),
-        create_arc_browser_rule(ARC_BROWSER_BINDINGS),
+        create_zen_browser_rule(ZEN_BROWSER_BINDINGS),
     ]
 
     # Create final configuration

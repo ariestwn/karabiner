@@ -120,9 +120,12 @@ SUBLAYERS = {
     "a": SUBLAYER_ALFRED
 }
 
-# Arc browser specific bindings
-ARC_BROWSER_BINDINGS = [
-    ("n", "n", ["left_command", "left_shift"], "Open new incognito window in Arc"),
-    ("l", "n", ["left_command", "left_option"], "Open little browser in Arc"),
-    ("equal_sign", "equal_sign", ["left_shift", "left_control"], "Open little browser in Arc"),
+# Zen browser specific bindings
+ZEN_BROWSER_BINDINGS = [
+    ("n", "p", ["left_command", "left_shift"], "Open new private window in Zen"),
+    ("right_arrow", "right_arrow", ["left_command", "left_option", "left_control"], "Zen: Next workspace"),
+    ("left_arrow", "left_arrow", ["left_command", "left_option", "left_control"], "Zen: Previous workspace"),
+    ("1", "1", ["left_command", "left_option", "left_control"], "Zen: Workspace 1"),
+    ("2", "2", ["left_command", "left_option", "left_control"], "Zen: Workspace 2"),
+    ("3", "3", ["left_command", "left_option", "left_control"], "Zen: Workspace 3"),
 ]

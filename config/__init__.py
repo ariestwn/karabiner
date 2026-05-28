@@ -28,12 +28,12 @@ from .sublayers import (
 from .device_profiles import create_device_profile
 
 # App-specific functions
-from .apps.arc import create_arc_browser_rule, create_arc_browser_manipulator
+from .apps.zen import create_zen_browser_rule, create_zen_browser_manipulator
 
 # Settings and configurations
 from .settings import (
     SUBLAYERS,
-    ARC_BROWSER_BINDINGS,
+    ZEN_BROWSER_BINDINGS,
     SUBLAYER_BROWSER,
     SUBLAYER_APPS,
     SUBLAYER_WINDOW,
@@ -78,12 +78,12 @@ __all__ = [
     'create_device_profile',
     
     # App-specific functions
-    'create_arc_browser_rule',
-    'create_arc_browser_manipulator',
-    
+    'create_zen_browser_rule',
+    'create_zen_browser_manipulator',
+
     # Settings
     'SUBLAYERS',
-    'ARC_BROWSER_BINDINGS',
+    'ZEN_BROWSER_BINDINGS',
     'SUBLAYER_BROWSER',
     'SUBLAYER_APPS',
     'SUBLAYER_WINDOW',
