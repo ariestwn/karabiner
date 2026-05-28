@@ -54,12 +54,14 @@ def run_shell_command(command: str, description: str) -> Dict:
 
 def raycastw(name: str) -> Dict:
     return {
+        # raycast v2 (beta) uses raycast-x:// instead of raycast://, so pick your version.
         "to": [To(shell_command=f"open -g raycast-x://extensions/raycast/window-management/{name}")],
         "description": f"Window: {name}"
     }
 
 def rcustomw(name: str) -> Dict:
     return {
+        # raycast v2 (beta) uses raycast-x:// instead of raycast://, so pick your version.
         "to": [To(shell_command=f"open -g 'raycast-x://customWindowManagementCommand?&name={name}'")],
         "description": f"Window: {name}"
     }

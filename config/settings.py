@@ -82,12 +82,13 @@ SUBLAYER_MEDIA = {
 
 # Alfred Shortcut
 SUBLAYER_ALFRED = {
+    # raycast v2 (beta) uses raycast-x:// instead of raycast://, so pick your version.
     "h": open_app("raycast-x://extensions/raycast/ai/ai-chat"), #archive ayai
     "i": open_app("raycast-x://extensions/ariestwn/quickai/improve-writing"),
     "p": open_app("raycast-x://extensions/raycast/raycast/open-camera"), #colorPicker trigger
-    "c": open_app("raycast-x://extensions/raycast/clipboard-history/clipboard-history"), #supercmd clipboard history
-    "s": open_app("raycast-x://extensions/raycast/snippets/search-snippets"), #supercmd search snippet
-    "e": open_app("raycast-x://extensions/raycast/emoji-symbols/search-emoji-symbols"), #supercmd search snippet
+    "c": open_app("raycast-x://extensions/raycast/clipboard-history/clipboard-history"), #raycast clipboard history
+    "s": open_app("raycast-x://extensions/raycast/snippets/search-snippets"), #raycast search snippet
+    "e": open_app("raycast-x://extensions/raycast/emoji-symbols/search-emoji-symbols"), #raycast search snippet
 }
 
 # Quick Access (directly with Hyper key, no sublayer needed)
