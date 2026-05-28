@@ -52,12 +52,6 @@ def run_shell_command(command: str, description: str) -> Dict:
         "description": description
     }
 
-def rectangle(name: str) -> Dict:
-    return {
-        "to": [To(shell_command=f"open -g rectangle://execute-action?name={name}")],
-        "description": f"Window: {name}"
-    }
-
 def raycastw(name: str) -> Dict:
     return {
         "to": [To(shell_command=f"open -g raycast-x://extensions/raycast/window-management/{name}")],

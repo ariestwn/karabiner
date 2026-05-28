@@ -107,10 +107,9 @@ Special shortcuts when Zen browser is active:
 
 1. [Karabiner Elements](https://karabiner-elements.pqrs.org/) installed
 2. Python 3.x installed
-3. [Rectangle](https://rectangleapp.com/) for window management
-4. [iTerm2](https://iterm2.com/) for terminal commands
-5. [Alfred](https://www.alfredapp.com/) for Alfred workflows
-6. [Zen Browser](https://zen-browser.app/) for Zen-specific features
+3. [iTerm2](https://iterm2.com/) for terminal commands
+4. [Alfred](https://www.alfredapp.com/) for Alfred workflows
+5. [Zen Browser](https://zen-browser.app/) for Zen-specific features
 
 ## Installation
 

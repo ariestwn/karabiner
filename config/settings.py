@@ -1,5 +1,5 @@
 # config/settings.py
-from config import To, open_app, app, rectangle, rcustomw, raycastw, run_shell_command, run_automator
+from config import To, open_app, app, rcustomw, raycastw, run_shell_command, run_automator
 
 # Browser-related URLs and apps
 SUBLAYER_BROWSER = {

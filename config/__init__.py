@@ -10,7 +10,6 @@ from .types import KeyCode, ModifiersKeys
 from .actions import (
     open_app,
     app,
-    rectangle,
     rcustomw,
     raycastw,
     run_shell_command,
@@ -62,7 +61,6 @@ __all__ = [
     # Actions
     'open_app',
     'app',
-    'rectangle',
     'raycastw',
     'rcustomw',
     'run_shell_command',
